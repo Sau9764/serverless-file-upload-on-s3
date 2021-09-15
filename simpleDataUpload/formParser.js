@@ -11,9 +11,11 @@ module.exports.parser = (event, fileSize) =>
         fileSize
       }
     });
+
     const result = {
       files: []
     };
+    
     busboy.on("file", (fieldname, file, filename, encoding, mimetype) => {
       const uploadFile = {};
       file.on("data", data => {
